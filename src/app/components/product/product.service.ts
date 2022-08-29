@@ -1,5 +1,10 @@
+import { Observable } from 'rxjs';
+import { BASE_URL } from './../../../../../project-angular/src/environments/environment';
+import { Product } from './product.model';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +12,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class ProductService {
 
-  constructor(private snackBar: MatSnackBar ) { }
+  BASE_URL= "http://localhost:3001/products"
+
+  constructor(private snackBar: MatSnackBar, private http: HttpClient ) { }
 
   //Quando for utilizar o SnackBas, importar no arquivo app.module.ts raiz
   showMesage(msg: string):void{
@@ -16,5 +23,9 @@ export class ProductService {
       horizontalPosition: "right",
       verticalPosition:"top"
     })
+  }
+
+  create(product: Product):Observable<Product>{
+    return this.http.post<Product>(this.BASE_URL, product)
   }
 }
