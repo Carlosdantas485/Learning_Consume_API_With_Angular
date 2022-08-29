@@ -1,1 +1,7 @@
-<p>product-read works!</p>
+<ul>
+    <!-- *ngFor = "TipoVariavel paraCadaItem daLista Lista[]"-->
+    <li *ngFor="let product of products">
+        <p>{{product.name}}</p>
+        <p>{{product.price}}</p>
+    </li>
+</ul>
