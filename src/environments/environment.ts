@@ -14,3 +14,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+//Desta forma a URL da api nao fica  implementada direto no codigo 
+export const URL_API = 'http://localhost:3001/'

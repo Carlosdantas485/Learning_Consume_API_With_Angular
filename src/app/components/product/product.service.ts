@@ -4,14 +4,13 @@ import { Product } from './product.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { URL_API } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProductService {
-
-  BASE_URL= "http://localhost:3001/products"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient ) { }
 
@@ -25,25 +24,25 @@ export class ProductService {
   }
 
   create(product: Product):Observable<Product>{
-    return this.http.post<Product>(this.BASE_URL, product)
+    return this.http.post<Product>(`${URL_API}products`, product)
   }
 
   readProducts():Observable<Product[]>{
-    return this.http.get<Product[]>(this.BASE_URL)
+    return this.http.get<Product[]>(`${URL_API}products`)
   }
 
   readById(id: number):Observable<Product>{
-    const URL = `${this.BASE_URL}/${id}`
+    const URL = `${URL_API}products/${id}`
     return this.http.get<Product>(URL)
   }
 
   update(product: Product): Observable<Product>{
-    const URL = `${this.BASE_URL}/${product.id}`
+    const URL = `${URL_API}products/${product.id}`
     return this.http.put<Product>(URL, product )
   }
 
   delete(id:number):Observable<Product>{
-    const URL = `${this.BASE_URL}/${id}`;
+    const URL = `${URL_API}products/${id}`;
     return this.http.delete<Product>(URL)
   }
 }
