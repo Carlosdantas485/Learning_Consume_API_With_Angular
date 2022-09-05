@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title>
+        <p>Users</p>
+    </mat-card-title>
+
+    <mat-card class="card-user" *ngFor="let user of users">
+        <div class="user-box">
+            <img src="{{user.url}}" alt="" class="photo">
+            <h1> {{user.userName}} </h1>
+        </div>
+        <p> {{user.password}} </p>
+        <div class="directivTest">
+            <div *ngIf="returnRed ; else notRed" >
+                <p class="red">  {{user.balance | currency:'BRL'}} </p>
+                positivo
+            </div>
+            <ng-template #notRed >
+                <p class="green">  {{user.balance | currency:'BRL'}} </p>
+                Negativo
+            </ng-template>
+        </div>
+    </mat-card>
+</mat-card>

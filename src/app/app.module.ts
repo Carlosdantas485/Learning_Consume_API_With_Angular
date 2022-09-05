@@ -39,6 +39,10 @@ import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
+import { UsersListComponent } from './components/users/users-list/users-list.component';
+import { UsersCreateComponent } from './components/users/users-create/users-create.component';
+import { UsersUpdateComponent } from './components/users/users-update/users-update.component';
+import { UsersDeleteComponent } from './components/users/users-delete/users-delete.component';
 
 registerLocaleData(localePt);
 
@@ -55,7 +59,11 @@ registerLocaleData(localePt);
     ProductCreateComponent,
     ProductReadComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    UsersListComponent,
+    UsersCreateComponent,
+    UsersUpdateComponent,
+    UsersDeleteComponent
   ],
   imports: [
     BrowserModule,

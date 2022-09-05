@@ -6,3 +6,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .v-middle{
     vertical-align: middle;
 }
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
