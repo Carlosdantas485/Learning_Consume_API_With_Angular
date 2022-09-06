@@ -6,20 +6,23 @@
         Exemplo
     </mat-card-subtitle>
 
-    <div class="directivTest">
-        <h1 *ngIf="canShow ; else notFound">
-            Validacao correta
-        </h1>
-        <ng-template #notFound>
-            Validacao incorreta
-        </ng-template>
-    </div>
+    <input type="text "[(ngModel)]="name" placeholder="Carlos">
+    <p>{{name}}</p>
     <ul>
-        <li *myFor="let n em [1,2,3,4,5,6,7,8,9]" class="green">
-            {{n}}
+        <li *myFor="let n em [1,2,3,4,5,6,7,8,9]" >
+            {{n === 4}}
+            <div class="directivTest">
+                <p *ngIf="(n>=4) ; else notFound"class="green">
+                    {{n}}
+                </p>
+                <ng-template #notFound >
+                    <P class="red">
+                        {{n}}
+                    </P>
+                </ng-template>
+            </div>
         </li>
     </ul>
 
-    <input type="text "[(ngModel)]="name" placeholder="Carlos">
-    <p>{{name}}</p>
+    
 </mat-card>

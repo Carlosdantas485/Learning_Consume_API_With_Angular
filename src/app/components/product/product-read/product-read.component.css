@@ -12,3 +12,7 @@ table{
 .delete > i{
 color: #e35e6b;
 }
+.product-image{
+    width: 100px;
+    margin: 10px;
+}
