@@ -15,7 +15,17 @@
        <!-- price Column -->
        <ng-container matColumnDef="price">
         <th mat-header-cell *matHeaderCellDef >Preço</th>
-        <td mat-cell *matCellDef="let row">{{row.price | currency:'BRL'}}</td>
+        <td mat-cell *matCellDef="let row">
+          <div class="directivTest">
+            <!--This part show green if the banace is bigger then 0, else show balance red!--> 
+            <div *ngIf="returnRed  ; else notRed">
+                <p class="red">  {{row.price | currency:'BRL'}}</p>
+            </div>
+            <ng-template #notRed >
+                <p class="green">  {{row.price | currency:'BRL'}} </p>
+            </ng-template>
+        </div>
+        </td>
       </ng-container>
 
       <!-- action Column -->

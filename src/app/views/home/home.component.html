@@ -14,10 +14,12 @@
             Validacao incorreta
         </ng-template>
     </div>
-
     <ul>
-        <li *myFor="let n em [1,2,3]">
+        <li *myFor="let n em [1,2,3,4,5,6,7,8,9]" class="green">
             {{n}}
         </li>
     </ul>
+
+    <input type="text "[(ngModel)]="name" placeholder="Carlos">
+    <p>{{name}}</p>
 </mat-card>
