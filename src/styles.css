@@ -7,10 +7,45 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     vertical-align: middle;
 }
 
+*,p{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
 .red{
     color: red;
 }
 
 .green{
     color: green;
+}
+
+.gray{
+    color: rgb(228, 228, 228);
+}
+
+p{
+    margin: 0;
+    max-height: 6em;
+}
+
+.btn-buy{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(92, 148, 201);
+    color: white;
+    padding: 10px;
+}
+
+.btn-buy:hover{
+    background-color: rgb(32, 104, 170);
+    transition: 0.5s;
+    transform: scale(1.03);
+}
+
+.img-product{
+    height: 150px;
+    width: 150px;
 }

@@ -1,1 +1,40 @@
-<p>users-create works!</p>
+<mat-card>
+    <mat-card-title>
+        Alterar Usuário
+    </mat-card-title>
+    <form action="">
+        <mat-form-field>
+            <input matInput placeholder="Nome"[(ngModel)]="user.userName" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="user.balance" name="balance">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="user.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="user.phone" name="phone">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Saldo" [(ngModel)]="user.balance" name="balance">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="(URL) Foto" [(ngModel)]="user.url" name="url">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="createUser()" color="primary" >Atualizar</button>
+    <button mat-raised-button (click)="cancel()">Cancelar</button>
+</mat-card>
+<!--
+id?: number | null
+userName?: string | null
+password?: string | null
+rePassword?: string | null
+cpf?: string | null
+phone?: number | null
+balance?: number | null
+url?: string | null
+-->

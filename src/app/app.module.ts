@@ -26,6 +26,7 @@ import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 
 import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule }from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
@@ -63,7 +64,7 @@ registerLocaleData(localePt);
     UsersListComponent,
     UsersCreateComponent,
     UsersUpdateComponent,
-    UsersDeleteComponent
+    UsersDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +82,8 @@ registerLocaleData(localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    ReactiveFormsModule
 
   ],
   providers: [{

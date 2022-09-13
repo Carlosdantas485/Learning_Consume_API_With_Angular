@@ -1,14 +1,28 @@
+*,p{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
 .header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
+
 .header a{
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
-.header .logo{
+.store-logo-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .store-logo{
     height: 32px;
 }
 
@@ -19,4 +33,29 @@
 
 .header .title-group i{
     padding-right: 5px;
+}
+.chart{
+    margin-right: 10px;
+    
+}
+
+.user-header-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-user-header{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 2px;
+    margin-right: 10px;
+    border: solid 1px rgb(119, 199, 0);
+}
+
+.edit-user{
+    text-decoration: underline;
+    color: rgb(51, 106, 224);
 }

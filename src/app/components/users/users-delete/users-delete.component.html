@@ -1,1 +1,42 @@
-<p>users-delete works!</p>
+<mat-card>
+    <mat-card-title> Deletar produto ? </mat-card-title>
+    <form action="">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nome"
+          [(ngModel)]="user.userName"
+          name="name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Preço (R$)"
+          [(ngModel)]="user.password"
+          name="password"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Preço (R$)"
+          [(ngModel)]="user.balance"
+          name="balance"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Preço (R$)"
+          [(ngModel)]="user.url"
+          name="url"
+        />
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="warn" (click)="deleteProduct()">
+      Deletar
+    </button>
+    <button (click)="cancel()" mat-raised-button>Cancelar</button>
+  </mat-card>
+  

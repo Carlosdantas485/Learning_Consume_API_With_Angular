@@ -1,1 +1,45 @@
-<p>users-update works!</p>
+<mat-card>
+    <mat-card-title>
+        Alterar Usuário
+    </mat-card-title>
+    <form action="">
+        <mat-form-field>
+            <input matInput placeholder="Nome"[(ngModel)]="user.userName" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="user.balance" name="balance">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="user.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="user.phone" name="phone">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Saldo" [(ngModel)]="user.balance" name="balance">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="(URL) Foto" [(ngModel)]="user.url" name="url">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="updateUser()" color="primary" >Atualizar</button>
+    <button mat-raised-button (click)="cancel()">Cancelar</button>
+
+    <div id="popup" *ngIf="userService.showDialog ">
+        <div class="popup-content">
+            <div>
+                <h1>Deseja cadastrar este usuário ?</h1>
+
+                <p>Nome:{{user.userName}}</p>
+                <p>Senha:{{user.password}}</p>
+                <p>Saldo:{{user.balance}}</p>
+                <img src="{{user.url}}" alt="" class="img-user">
+            </div>
+            <button (click)="updateUser()" mat-raised-button color="primary">Confirmar</button>
+            <button  mat-raised-button color="warn">Cancelar</button>
+        </div>
+    </div>
+</mat-card>

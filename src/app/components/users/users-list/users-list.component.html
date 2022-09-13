@@ -1,23 +1,44 @@
-<mat-card class="card">
-    <mat-card-title>
-        <p>Usuários</p>
-    </mat-card-title>
+    <button mat-raised-button (click)="navigateToUserCreate()" color="primary">
+        Novo Usuário
+    </button>
+    <div class="list-user-container"> 
+        <div class="empty-list" *ngIf="(users.length === 0); else voided">
+            <span class="material-icons md-dark gray">face</span>
+            <h1 class="gray">Não possui usuários cadatrados </h1>
+        </div>
+        <ng-template #voided>
+            <mat-card class="card-user" *ngFor="let user of users">
+                <div class="user-box">
+                    <img src="{{user.url}}" alt="" class="photo">
+                    <h1> {{user.userName}} </h1>
+                </div>
+                <p> {{user.phone}} </p>
+                <p> {{user.cpf}} </p>
+                <div class="directivTest">
+                    <!--This part show green if the banace is bigger then 0, else show balance red!--> 
+                    <div *ngIf=" !user.balance ; else notRed" >
+                        <p class="red">  {{user.balance | currency:'BRL'}} </p>
+                    </div>
+                    <ng-template #notRed >
+                        <p class="green">  {{user.balance | currency:'BRL'}} </p>
+                    </ng-template>
+                </div>
+                <div>
+                    <a routerLink="update/{{ user.id }}" class="edit">
+                        <i class="material-icons ">
+                            edit
+                        </i>
+                    </a>
+                    <a routerLink="delete/{{ user.id }}" class="delete">
+                        <i class="material-icons delete">
+                            delete
+                        </i>
+                    </a>
+                </div>
+                
+            </mat-card>
+        </ng-template>
+    </div>
     
 
-    <mat-card class="card-user" *ngFor="let user of users">
-        <div class="user-box">
-            <img src="{{user.url}}" alt="" class="photo">
-            <h1> {{user.userName}} </h1>
-        </div>
-        <p> {{user.password}} </p>
-        <div class="directivTest">
-            <!--This part show green if the banace is bigger then 0, else show balance red!--> 
-            <div *ngIf="returnRed ; else notRed" >
-                <p class="red">  {{user.balance | currency:'BRL'}} </p>
-            </div>
-            <ng-template #notRed >
-                <p class="green">  {{user.balance | currency:'BRL'}} </p>
-            </ng-template>
-        </div>
-    </mat-card>
-</mat-card>
+    

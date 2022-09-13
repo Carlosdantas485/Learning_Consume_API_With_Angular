@@ -1,28 +1,24 @@
-<mat-card class="nome mat-elevation-z3">
+<mat-card class="home mat-elevation-z3">
     <mat-card-title class="title">
-        Titulo
+        Home
     </mat-card-title>
     <mat-card-subtitle class="subtitle">
-        Exemplo
+        <img src="https://www.pontofrio-imagens.com.br/criacao/03-hotsite/2021/10-out/loja-apple/images/banner-tv-02.png" alt="" class="banner-home">
     </mat-card-subtitle>
 
     <input type="text "[(ngModel)]="name" placeholder="Carlos">
     <p>{{name}}</p>
-    <ul>
-        <li *myFor="let n em [1,2,3,4,5,6,7,8,9]" >
-            {{n === 4}}
-            <div class="directivTest">
-                <p *ngIf="(n>=4) ; else notFound"class="green">
-                    {{n}}
-                </p>
-                <ng-template #notFound >
-                    <P class="red">
-                        {{n}}
-                    </P>
-                </ng-template>
+    <div class="product-list">
+        <mat-card class="product" *ngFor="let product of products">
+            <img  class="img-product" src="{{product.url}}" alt="">
+            <p  class="name-product">{{product.name}}</p>
+            <div>
+                <p> {{product.price | currency:'BRL'}} </p>
+                <p class="old-price"> {{product.price | currency:'BRL'}} </p>
             </div>
-        </li>
-    </ul>
-
+            <button class="btn-buy">Comprar</button>
+        </mat-card>
+    </div>
     
 </mat-card>
+

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../user.model';
 import { UserService } from '../user.service';
@@ -9,8 +10,10 @@ import { UserService } from '../user.service';
 })
 export class UsersListComponent implements OnInit {
   users!: Users[];
-  returnRed = false;
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
     this.showUsers();
@@ -22,8 +25,7 @@ export class UsersListComponent implements OnInit {
     })
   }
 
-  canShow(){
-    
+  navigateToUserCreate():void{
+    this.router.navigate(['/users/create'])
   }
-
 }

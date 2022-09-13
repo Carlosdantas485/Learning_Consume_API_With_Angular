@@ -6,7 +6,6 @@ import { Router } from '@angular/router'
   styleUrls: ['./product-crud.component.css']
 })
 export class ProductCrudComponent implements OnInit {
-
   constructor( private router: Router) { }
 
   ngOnInit(): void {

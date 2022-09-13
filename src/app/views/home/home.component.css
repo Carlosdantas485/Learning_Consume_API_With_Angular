@@ -1,10 +1,50 @@
-.homem .title{
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .title{
     font-size:  3rem;
     font-weight: 300;
     line-height: 1.2;
-
 }
 
 .home .subtitle{
     font-size: 1.1em;
+}
+
+.banner-home{
+    width: 100%;
+}
+
+.product-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.name-product{
+    overflow: hidden;
+    width: 100%; 
+    height: 60px;
+}
+
+.old-price{
+    text-decoration: line-through;
+    color: red;
 }
