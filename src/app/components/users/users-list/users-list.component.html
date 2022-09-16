@@ -12,8 +12,11 @@
                     <img src="{{user.url}}" alt="" class="photo">
                     <h1> {{user.userName}} </h1>
                 </div>
-                <p> {{user.phone}} </p>
-                <p> {{user.cpf}} </p>
+                <mat-card-subtitle>
+                    <p> Telefone: {{user.phone}} </p>
+                    <p> CPF: {{user.cpf}} </p>
+                </mat-card-subtitle>
+               
                 <div class="directivTest">
                     <!--This part show green if the banace is bigger then 0, else show balance red!--> 
                     <div *ngIf=" !user.balance ; else notRed" >

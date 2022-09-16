@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { UserService } from './../user.service';
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder  } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
@@ -10,6 +10,8 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./users-create.component.css']
 })
 export class UsersCreateComponent  {
+  hide = true;
+
   data: any;
   
   profileForm = this.fb.group({
@@ -25,11 +27,9 @@ export class UsersCreateComponent  {
   constructor(public userService: UserService, private router: Router, private fb: FormBuilder) { }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn();
+    console.warn(this.profileForm.value.password);
 
     this.data = this.profileForm.value;
-
     this.userService.create(this.data).subscribe(()=>{
       this.userService.showMesage('Usuário criado com sucesso!')
       this.router.navigate(['/users'])
@@ -37,63 +37,7 @@ export class UsersCreateComponent  {
     })
   }
 
-
-
-  /*
-
-  formUser!: FormGroup;
-
-  usuario = {
-    userName: '',
-    password: '',
-    rePassword:'',
-    phone: '',
-    cpf: '',
-    balance: ''
-  }
-
-  form = new FormGroup({
-    name: new FormControl ('', Validators.required),
-    password: new FormControl ('', Validators.required),
-    rePassword: new FormControl ('', Validators.required),
-    phone: new FormControl ('', Validators.required),
-    cpf: new FormControl ('', Validators.required),
-    balance: new FormControl ('', Validators.required),
-  })
-
-  @Input() classCss:any;
-
-  constructor(public userService: UserService, private router: Router, private formBuilder: FormBuilder) { }
- 
-  ngOnInit(): void {
-    this.exect(new Users());
-  }
-
-  createUser():void{
-      
-    
-
-    
-  }
-
-  onSubmit(formulario:any){
-    console.log(formulario);
-  }
-  
-  exect(userForm: Users){
-
-    this.formUser = new FormGroup({
-      userName: new FormControl (userForm.userName),
-      password: new FormControl (userForm.password),
-      rePassword: new FormControl (userForm.rePassword),
-      phone: new FormControl (userForm.phone),
-      cpf: new FormControl (userForm.cpf),
-      balance: new FormControl (userForm.balance),
-    })
-
-  }
   cancel():void{
     this.router.navigate(['/users'])
   }
-  */
 }
