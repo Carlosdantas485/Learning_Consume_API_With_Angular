@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Input } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,8 +25,8 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 
-import {FormsModule} from '@angular/forms';
-import {ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule }from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
@@ -37,13 +37,15 @@ import { MatSortModule } from '@angular/material/sort';
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
 
-import {registerLocaleData} from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { UsersCreateComponent } from './components/users/users-create/users-create.component';
 import { UsersUpdateComponent } from './components/users/users-update/users-update.component';
 import { UsersDeleteComponent } from './components/users/users-delete/users-delete.component';
+
+import { NgxMaskModule } from 'ngx-mask';
 
 registerLocaleData(localePt);
 
@@ -83,7 +85,10 @@ registerLocaleData(localePt);
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters:false
+    }),
 
   ],
   providers: [{

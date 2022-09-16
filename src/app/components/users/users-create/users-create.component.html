@@ -1,35 +1,50 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput placeholder="name" formControlName="userName" />
+    </mat-form-field> 
+    <mat-form-field>
+        <input matInput placeholder="Senha" formControlName="password" pattern="(?=(.*[0-9]))(?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])^.{8,}$"/>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Confirmar Senha" formControlName="rePassword" pattern="(?=(.*[0-9]))(?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])^.{8,}$"/>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="CPF" formControlName="cpf"pattern="" maxlength="11" size="11"/>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Telefone" formControlName="phone"/>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Saldo" formControlName="balance"/>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="(URL)" formControlName="url"/>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="date" placeholder="Aniversario" formControlName="url"/>
+    </mat-form-field>
+  
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+
+  <p>Form Value: {{ profileForm.value | json }}</p>
+
+<p>Form Status: {{ profileForm.status }}</p>
+
+<!--
 <mat-card>
     <mat-card-title>
-        Alterar Usuário
+        Criar Usuário
     </mat-card-title>
-    <form action="">
-        <mat-form-field>
-            <input matInput placeholder="Nome"[(ngModel)]="user.userName" name="name">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Senha" [(ngModel)]="user.balance" name="balance">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="CPF" [(ngModel)]="user.cpf" name="cpf">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Telefone" [(ngModel)]="user.phone" name="phone">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Saldo" [(ngModel)]="user.balance" name="balance">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="(URL) Foto" [(ngModel)]="user.url" name="url">
-        </mat-form-field>
+    <form action="submit"  #f="ngForm" (ngSubmit)="onSubmit(f)">
+        
     </form>
-    <button mat-raised-button (click)="createUser()" color="primary" >Atualizar</button>
+    <button mat-raised-button type="submit" color="primary" >Atualizar</button>
     <button mat-raised-button (click)="cancel()">Cancelar</button>
 </mat-card>
+-->
 <!--
-id?: number | null
 userName?: string | null
 password?: string | null
 rePassword?: string | null
